@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crafting Maximizer (External JS)</title>
+    
+    <style>
+        body { font-family: sans-serif; max-width: 650px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+        input[type="number"] { padding: 10px; margin-left: 10px; width: 120px; border: 1px solid #aaa; border-radius: 4px; }
+        label { display: inline-block; width: 150px; font-weight: bold; }
+        div.input-group { margin-bottom: 15px; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        button { 
+            padding: 12px 25px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 10px; 
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #0056b3; }
+        hr { border: 0; height: 1px; background-color: #ccc; margin: 20px 0; }
+        h3 { color: #007bff; margin-top: 0; }
+        ul { list-style: square; padding-left: 20px; }
+        .success { color: green; font-weight: bold; font-size: 1.1em; }
+        .failure { color: darkorange; font-weight: bold; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+
+    <h1>✨ Maximum Item Crafting Optimizer (External JS) ✨</h1>
+    
+    <p>The calculation now finds the true maximum by aggressively exchanging excess Green/Gray for Blue powder.</p>
+
+    <div class="input-group">
+        <label for="initialGray">Current Gray:</label>
+        <input type="number" id="initialGray" value="4737" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="initialGreen">Current Green:</label>
+        <input type="number" id="initialGreen" value="6562" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="initialBlue">Current Blue:</label>
+        <input type="number" id="initialBlue" value="82" min="0">
+    </div>
+
+    <button type="button" id="calculateButton">Optimize and Calculate Max Items</button>
+
+    <hr>
+
+    <h2>Calculation Results:</h2>
+    <div id="results">
+        <p>Enter your inventory and click the button to see the maximum items you can craft.</p>
+    </div>
+    
+    <script src="craft_logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Container for the whole app */
+.tabs-container {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* The tab navigation bar */
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #DFD0B8;
+}
+
+/* Individual tab buttons */
+.tab-link {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #948979;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.tab-link:hover {
+  background-color: #DFD0B8;
+}
+
+/* Style for the active tab */
+.tab-link.active {
+  border-bottom: 3px solid #DFD0B8;
+  color: #393E46;
+  font-weight: bold;
+}
+
+/* Hide content by default */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.inline-emoji {
+    height: 1.8em;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 0.1em;
+    user-select: none;
+}
+
+        body { color: #DFD0B8; font-family: "Roboto"; max-width: 650px; margin: 0 auto; padding: 20px; background-color: #222831; }
+        h1 { color: #DFD0B8; border-bottom: 2px solid #393E46; padding-bottom: 10px; }
+        input[type="number"] { padding: 10px; margin-left: 10px; width: 120px; border: 1px solid #393E46; border-radius: 4px; }
+        label { display: inline-block; width: 150px; font-weight: bold; }
+        div.input-group { margin-bottom: 15px; background-color: #393E46; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        button { 
+            padding: 12px 25px; 
+            background-color: #DFD0B8; 
+            color: #393E46; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 10px; 
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #948979; }
+        hr { border: 0; height: 1px; background-color: #ccc; margin: 20px 0; }
+        h3 { color: #DFD0B8; margin-top: 0; }
+        ul { list-style: square; padding-left: 20px; }
+        .success { color: #948979; font-weight: bold; font-size: 1.1em; }
+        .failure { color: #948979; font-weight: bold; font-size: 1.1em; }
+
+        /* Target both result areas */
+#supResults, #stdResults {
+    background-color: #393E46; /* Matches your input groups */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #948979; /* Adds a subtle border using your existing gold color */
+    margin-top: 20px;
+    color: #DFD0B8; /* Ensures text stays readable */
+}
+
+/* Optional: Make the "Final Conclusion" header pop more */
+#supResults h3, #stdResults h3 {
+    color: #FFD369; /* A brighter yellow/gold for the heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

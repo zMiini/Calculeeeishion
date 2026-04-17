@@ -2,63 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crafting Maximizer (External JS)</title>
-    
-    <style>
-        body { font-family: sans-serif; max-width: 650px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
-        h1 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
-        input[type="number"] { padding: 10px; margin-left: 10px; width: 120px; border: 1px solid #aaa; border-radius: 4px; }
-        label { display: inline-block; width: 150px; font-weight: bold; }
-        div.input-group { margin-bottom: 15px; background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        button { 
-            padding: 12px 25px; 
-            background-color: #007bff; 
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-size: 16px; 
-            margin-top: 10px; 
-            transition: background-color 0.3s;
-        }
-        button:hover { background-color: #0056b3; }
-        hr { border: 0; height: 1px; background-color: #ccc; margin: 20px 0; }
-        h3 { color: #007bff; margin-top: 0; }
-        ul { list-style: square; padding-left: 20px; }
-        .success { color: green; font-weight: bold; font-size: 1.1em; }
-        .failure { color: darkorange; font-weight: bold; font-size: 1.1em; }
-    </style>
+    <title>Abidos Calculators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="https://lostarkcodex.com/icons/use_8_109.webp">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
 
-    <h1>✨ Maximum Item Crafting Optimizer (External JS) ✨</h1>
+    <div class="tab-header">
+        <button class="tab-link active" onclick="openTab(event, 'tab-one')"><img src="superior_abidos.png" class="inline-emoji" alt="icon"> Superior Abidos</button>
+        <button class="tab-link" onclick="openTab(event, 'tab-two')"><img src="abidos.png" class="inline-emoji" alt="icon"> Abidos</button>
+    </div>
+
+    <div id="tab-one" class="tab-content" style="display: block;">
+    <h1><img src="superior_abidos.png" class="inline-emoji" alt="icon"> Superior Abidos Crafting Optimizer</h1>
     
     <p>The calculation now finds the true maximum by aggressively exchanging excess Green/Gray for Blue powder.</p>
 
     <div class="input-group">
-        <label for="initialGray">Current Gray:</label>
-        <input type="number" id="initialGray" value="4737" min="0">
+        <label for="supGray">Current Gray:</label>
+        <input type="number" id="supGray" value="0" min="0">
     </div>
 
     <div class="input-group">
-        <label for="initialGreen">Current Green:</label>
-        <input type="number" id="initialGreen" value="6562" min="0">
+        <label for="supGreen">Current Green:</label>
+        <input type="number" id="supGreen" value="0" min="0">
     </div>
 
     <div class="input-group">
-        <label for="initialBlue">Current Blue:</label>
-        <input type="number" id="initialBlue" value="82" min="0">
+        <label for="supBlue">Current Blue:</label>
+        <input type="number" id="supBlue" value="0" min="0">
     </div>
 
-    <button type="button" id="calculateButton">Optimize and Calculate Max Items</button>
-
-    <hr>
-
-    <h2>Calculation Results:</h2>
-    <div id="results">
-        <p>Enter your inventory and click the button to see the maximum items you can craft.</p>
+    <button type="button" id="supCalculate">Optimize and Calculate Max Items</button>
+    <div id="supResults"></div>
     </div>
+
+    <div id="tab-two" class="tab-content">
+    <h1><img src="abidos.png" class="inline-emoji" alt="icon"> Abidos Crafting Optimizer </h1>
     
+    <p>The calculation now finds the true maximum by aggressively exchanging excess Green/Gray for Blue powder.</p>
+
+    <div class="input-group">
+        <label for="stdGray">Current Gray:</label>
+        <input type="number" id="stdGray" value="0" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="stdGreen">Current Green:</label>
+        <input type="number" id="stdGreen" value="0" min="0">
+    </div>
+
+    <div class="input-group">
+        <label for="stdBlue">Current Blue:</label>
+        <input type="number" id="stdBlue" value="0" min="0">
+    </div>
+
+    <button type="button" id="stdCalculate">Optimize and Calculate Max Items</button>
+    <div id="stdResults"></div>
+    </div>
+
+    <script src="craft_logic_superior.js"></script>
     <script src="craft_logic.js"></script>
+    <script>
+    function openTab(evt, tabId) {
+// 1. Hide all tab content
+    let contents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+    }
+
+// 2. Remove the "active" class from all buttons
+    let links = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < links.length; i++) {
+        links[i].className = links[i].className.replace(" active", "");
+    }
+
+          // 3. Show the current tab and add "active" class to the button
+    document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
 </body>
 </html>

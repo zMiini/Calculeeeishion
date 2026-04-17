@@ -1,10 +1,10 @@
-function calculateStandard() {
+function calculateSuperior() {
     // --- 1. Define Constants and Get Inputs ---
     
     const RESOURCES_PER_ITEM = {
-        GRAY: 86,
-        GREEN: 45,
-        BLUE: 33
+        GRAY: 112,
+        GREEN: 59,
+        BLUE: 43
     };
 
     const POWDER_PER_BLUE = 10;
@@ -13,9 +13,9 @@ function calculateStandard() {
     const GREEN_EXCHANGE_COST = 50;
     const GREEN_EXCHANGE_YIELD = 80;
     
-    let currentGray = Number(document.getElementById('stdGray').value);
-    let currentGreen = Number(document.getElementById('stdGreen').value);
-    let currentBlue = Number(document.getElementById('stdBlue').value);
+    let currentGray = Number(document.getElementById('supGray').value);
+    let currentGreen = Number(document.getElementById('supGreen').value);
+    let currentBlue = Number(document.getElementById('supBlue').value);
 
     let outputHTML = '';
     
@@ -165,13 +165,13 @@ function calculateStandard() {
             <li style="color:white";><b>Gray Used: ${bestGrayUsed} (Remaining: ${currentGrayRemaining})</b></li>
         </ul>`;
 
-    document.getElementById('stdResults').innerHTML = outputHTML;
+    document.getElementById('supResults').innerHTML = outputHTML;
 }
 
 // Attach the function to the button ONLY after the document (DOM) is fully loaded.
 document.addEventListener('DOMContentLoaded', (event) => {
-    const button = document.getElementById('stdCalculate');
+    const button = document.getElementById('supCalculate');
     if (button) {
-        button.addEventListener('click', calculateStandard);
+        button.addEventListener('click', calculateSuperior);
     }
 });

@@ -142,10 +142,10 @@ function calculateStandard() {
     
     if (maxCraftable === absoluteMaxItems) {
          outputHTML += `<p class="success">✅ Successfully reached the maximum item limit set by Gray/Green inventory. Maximum crafted:</p>`;
-         outputHTML += `<p style="font-size: 2em; text-align: center;"><b>${maxCraftable} Items</b></p>`;
+         outputHTML += `<p style="font-size: 2em; text-align: center;"><b>${maxCraftable} Crafts (${maxCraftable*10} Total Abidos)</b></p>`;
     } else {
          outputHTML += `<p class="failure">⚠️ The maximum achievable count after exchanges is:</p>`;
-         outputHTML += `<p style="font-size: 2em; text-align: center;"><b>${maxCraftable} Items</b></p>`;
+         outputHTML += `<p style="font-size: 2em; text-align: center;"><b>${maxCraftable} Crafts (${maxCraftable*10} Total Abidos)</b></p>`;
          outputHTML += `<p>The limit is <b><span style="color:#007c9e;">Blue</span></b>, as generating enough Powder for item <b><span style="color:#007c9e;">${maxCraftable + 1}</span></b> is impossible with remaining reserves.</p>`;
     }
 
